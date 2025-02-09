@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+chromedriver/
+raw_data/
+.ipynb_checkpoints/
 __pycache__/
 *.py[cod]
 *$py.class
