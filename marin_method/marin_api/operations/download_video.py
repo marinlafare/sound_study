@@ -8,7 +8,7 @@ def download_video(data):
     video_stream = video_info.streams.get_audio_only()
     title = video_stream.title.replace(" ","_")\
                         .replace("|","").replace('"',"").replace("?","")\
-                        .replace("!","").replace('¿',"")
+                        .replace("!","").replace('¿',"").replace("/","_").replace("\\","_")
     if os.path.exists(f"raw_data/raw_video/{title}"):
         return f"video for ::: {title} ready"
     else:

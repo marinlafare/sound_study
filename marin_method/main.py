@@ -1,7 +1,7 @@
 # MAIN
 import os
 import fastapi
-from fastapi import FastAPI, WebSocket,WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
 from marin_api.operations.some_socket import some_socket_session

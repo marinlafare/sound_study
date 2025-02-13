@@ -11,7 +11,7 @@ def get_file_name_from_video_url(url):
     video_stream = video_info.streams.get_audio_only()
     title = video_stream.title.replace(" ","_")\
                         .replace("|","").replace('"',"").replace("?","")\
-                        .replace("!","").replace('¿',"")
+                        .replace("!","").replace('¿',"").replace("/","_").replace("\\","_")
     return title
 
 def separate_voice_from_one_audio(data):
@@ -20,6 +20,11 @@ def separate_voice_from_one_audio(data):
     url = data["url"]
     encoder =  "wav" or data["encoder"]
     title = get_file_name_from_video_url(url)
+    
+    print("###################################################")
+    print(title)
+    print(os.listdir(audio_folder))
+    print("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     song = [x for x in os.listdir(audio_folder) if title in x][0]
     separator = Separator(f"spleeter:2stems")
     separator.separate_to_file(os.path.join(audio_folder, song),

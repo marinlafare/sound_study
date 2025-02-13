@@ -8,7 +8,7 @@ def get_file_name_from_video_url(url):
     video_stream = video_info.streams.get_audio_only()
     title = video_stream.title.replace(" ","_")\
                         .replace("|","").replace('"',"").replace("?","")\
-                        .replace("!","").replace('¿',"")
+                        .replace("!","").replace('¿',"").replace("/","_").replace("\\","_")
     return title
 
 def extract_audio_from_one_video(data)->None:
